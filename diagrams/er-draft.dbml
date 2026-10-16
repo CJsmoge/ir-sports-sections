@@ -1,0 +1,46 @@
+Table Client {
+  id int [pk, increment]
+  name varchar(100)
+  phone varchar(20)
+  email varchar(255)
+}
+
+Table Trainer {
+  id int [pk, increment]
+  name varchar(100)
+  specialization varchar(100)
+}
+
+Table Section {
+  id int [pk, increment]
+  name varchar(100)
+}
+
+Table Hall {
+  id int [pk, increment]
+  name varchar(50)
+  capacity int
+}
+
+Table Lesson {
+  id int [pk, increment]
+  trainer_id int [ref: > Trainer.id]
+  hall_id int [ref: > Hall.id]
+  section_id int [ref: > Section.id]
+  start_at timestamp
+  duration_min int
+  status varchar(50)
+}
+
+Table Booking {
+  id int [pk, increment]
+  client_id int [ref: > Client.id]
+  lesson_id int [ref: > Lesson.id]
+  status varchar(50)
+}
+
+Table Attendance {
+  id int [pk, increment]
+  booking_id int [ref: > Booking.id]
+  visited boolean
+}
