@@ -1,0 +1,29 @@
+@startuml uml-component
+!theme plain
+skinparam componentStyle rectangle
+
+component "Web UI\n(Спортсмен)" as webUI
+component "Trainer UI\n(Тренер)" as trainerUI
+component "Admin UI\n(Администратор)" as adminUI
+
+component "REST API" as api
+component "Booking Service" as bookingSvc
+component "Lesson Service" as lessonSvc
+component "Notification Service" as notifSvc
+
+database "PostgreSQL" as db
+cloud "SMS Gateway" as sms
+
+webUI --> api : HTTPВ
+trainerUI --> api : HTTP
+adminUI --> api : HTTP
+
+api --> bookingSvc
+api --> lessonSvc
+api --> notifSvc
+
+bookingSvc --> db : SQL
+lessonSvc --> db : SQL
+notifSvc --> sms : API
+
+@enduml
