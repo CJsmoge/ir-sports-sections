@@ -1,0 +1,62 @@
+/* ===== ПЛАНШЕТЫ (от 768px) ===== */
+@media (min-width: 768px) {
+  /* Главная */
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .hero {
+    padding: 60px 24px;
+  }
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 24px;
+  }
+
+  /* Кабинет тренера: показываем сайдбар */
+  .master-layout {
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 72px 1fr auto;
+    grid-template-areas: 
+      "sidebar header"
+      "sidebar main"
+      "sidebar footer";
+  }
+  .master-sidebar {
+    display: flex; /* Возвращаем сайдбар */
+  }
+  .master-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+  }
+  .master-main {
+    padding: 32px;
+  }
+  .lessons-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 карточки в ряд */
+  }
+}
+
+/* ===== ДЕСКТОПЫ (от 1024px) ===== */
+@media (min-width: 1024px) {
+  /* Главная */
+  .hero {
+    padding: 80px 32px;
+  }
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  }
+  
+  /* Кабинет тренера */
+  .lessons-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Авто-сетка */
+  }
+}

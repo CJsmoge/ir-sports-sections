@@ -282,3 +282,52 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 6px 16px;
   font-size: var(--fs-small);
 }
+
+
+/* ===== БАЗОВЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ (MOBILE-FIRST) ===== */
+
+/* Главная страница */
+.site-header .container {
+  flex-direction: column;
+  gap: 16px;
+}
+.main-nav {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.hero {
+  padding: 40px 16px;
+}
+.hero h1 {
+  font-size: 1.75rem; /* Уменьшаем заголовок на телефоне */
+}
+.services-grid {
+  grid-template-columns: 1fr; /* Одна колонка на телефоне */
+  gap: 16px;
+}
+
+/* Кабинет тренера */
+.master-layout {
+  grid-template-columns: 1fr; /* Убираем сайдбар */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+.master-sidebar {
+  display: none; /* Скрываем сайдбар на мобильном */
+}
+.master-header {
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.master-main {
+  padding: 16px;
+}
+.lessons-grid {
+  grid-template-columns: 1fr; /* Карточки в одну колонку */
+}
