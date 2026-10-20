@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.tmp
+.vscode/git add .
+git commit -m "init: создание структуры репозитория"
+git push origin main
