@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Записаться — LinguaPro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container flex-between">
+      <a href="index.html" class="logo text-dark">🌍 LinguaPro</a>
+      <nav class="nav">
+        <a href="index.html">Главная</a>
+        <a href="courses.html">Курсы</a>
+        <a href="booking.html" class="active btn btn-primary">Записаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container py-4">
+    <div class="form-container">
+      <h1 class="text-center">Записаться на бесплатный урок</h1>
+      <p class="text-center text-muted mb-4">Оставьте заявку, и мы свяжемся с вами в течение 15 минут.</p>
+
+      <div id="success-msg" style="display:none; color: #065F46; text-align: center; margin-bottom: 20px; font-weight: bold; padding: 15px; background: #D1FAE5; border-radius: 8px;">
+        Заявка успешно отправлена! Мы скоро свяжемся с вами.
+      </div>
+
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="fullName">ФИО:</label>
+          <input type="text" id="fullName" placeholder="Иванов Иван Иванович" required>
+          <div class="invalid-feedback" id="err-fullName" style="color: #EF4444; font-size: 14px; margin-top: 4px;"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон:</label>
+          <input type="tel" id="phone" placeholder="+7(999)-123-45-67" required>
+          <div class="invalid-feedback" id="err-phone" style="color: #EF4444; font-size: 14px; margin-top: 4px;"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="example@mail.ru" required>
+          <div class="invalid-feedback" id="err-email" style="color: #EF4444; font-size: 14px; margin-top: 4px;"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="courseId">Выберите курс:</label>
+          <select id="courseId" required>
+            <option value="">-- Загрузка... --</option>
+          </select>
+          <div class="invalid-feedback" id="err-courseId" style="color: #EF4444; font-size: 14px; margin-top: 4px;"></div>
+        </div>
+
+        <div class="form-group checkbox">
+          <input type="checkbox" id="agree" required>
+          <label for="agree">Я согласен на обработку персональных данных</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Записаться</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="copyright text-center">© 2026 LinguaPro. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

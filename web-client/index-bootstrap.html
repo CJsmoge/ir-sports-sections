@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СпортСекции — Bootstrap версия</title>
+  <!-- Подключаем Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">⚽ СпортСекции</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#sections">Секции</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schedule">Расписание</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how">Как записаться</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+        </ul>
+        <a href="#booking" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="py-5 text-center">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold mb-3">Запишись в секцию за 2 минуты</h1>
+      <p class="lead text-muted mb-4">Футбол, плавание, йога, единоборства. Выбирай занятие и записывайся онлайн.</p>
+      <a href="#booking" class="btn btn-primary btn-lg">Выбрать секцию</a>
+    </div>
+  </section>
+
+  <!-- Секции (карточки) -->
+  <section class="py-5 bg-white" id="sections">
+    <div class="container">
+      <h2 class="text-center mb-5">Наши секции</h2>
+      <div class="row g-4">
+        
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Футбол</h5>
+              <p class="card-text text-muted">Групповые тренировки для взрослых и детей. Поле с искусственным покрытием.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-primary fw-bold">от 1 500 ₽ / мес</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Заказать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Плавание</h5>
+              <p class="card-text text-muted">Индивидуальные и групповые занятия с тренером в бассейне.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-primary fw-bold">от 2 000 ₽ / мес</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Заказать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Йога</h5>
+              <p class="card-text text-muted">Мягкие практики для спины, растяжка и дыхательные упражнения.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-primary fw-bold">от 1 200 ₽ / мес</span>
+                <a href="#" class="btn btn-sm btn-outline-primary">Заказать</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 text-center">
+    <div class="container">
+      <p class="mb-0">© 2026 СпортСекции. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (для мобильного меню) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

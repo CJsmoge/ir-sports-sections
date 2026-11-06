@@ -1,0 +1,59 @@
+@startuml uml-class
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Client {
+  - id: int
+  - name: string
+  - phone: string
+  + createBooking(): Booking
+  + cancelBooking(id: int): void
+}
+
+class Trainer {
+  - id: int
+  - name: string
+  - specialization: string
+  + viewGroup(lessonId: int): list
+  + markAttendance(bookingId: int, visited: bool): void
+}
+
+class Section {
+  - id: int
+  - name: string
+  - level: string
+}
+
+class Hall {
+  - id: int
+  - name: string
+  - capacity: int
+}
+
+class Lesson {
+  - id: int
+  - start_at: datetime
+  - duration_min: int
+  + checkConflict(): bool
+}
+
+class Booking {
+  - id: int
+  - status: string
+  + confirm(): void
+  + cancel(): void
+}
+
+class Attendance {
+  - id: int
+  - visited: boolean
+}
+
+Client "1" --> "*" Booking : делает
+Lesson "1" --> "*" Booking : содержит
+Trainer "1" --> "*" Lesson : ведёт
+Hall "1" --> "*" Lesson : проводится в
+Section "1" --> "*" Lesson : относится к
+Booking "1" --> "0..1" Attendance : отмечается
+
+@enduml

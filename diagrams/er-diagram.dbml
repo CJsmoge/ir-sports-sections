@@ -1,0 +1,55 @@
+Table Client {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  phone varchar(20) [unique, not null]
+  email varchar(255)
+  created_at timestamp [default: `now()`]
+}
+
+Table Trainer {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  phone varchar(20)
+  specialization varchar(100)
+  is_active boolean [default: true]
+}
+
+Table Section {
+  id int [pk, increment]
+  name varchar(100) [not null]
+  description text
+  level varchar(20)
+}
+
+Table Hall {
+  id int [pk, increment]
+  name varchar(50) [not null]
+  capacity int [not null]
+  address varchar(255)
+}
+
+Table Lesson {
+  id int [pk, increment]
+  trainer_id int [ref: > Trainer.id, not null]
+  hall_id int [ref: > Hall.id, not null]
+  section_id int [ref: > Section.id, not null]
+  start_at timestamp [not null]
+  duration_min int [not null]
+  capacity int [not null]
+  status varchar(20) [default: 'planned']
+}
+
+Table Booking {
+  id int [pk, increment]
+  client_id int [ref: > Client.id, not null]
+  lesson_id int [ref: > Lesson.id, not null]
+  status varchar(20) [default: 'confirmed']
+  created_at timestamp [default: `now()`]
+}
+
+Table Attendance {
+  id int [pk, increment]
+  booking_id int [ref: > Booking.id, not null]
+  visited boolean [default: false]
+  marked_at timestamp
+}
